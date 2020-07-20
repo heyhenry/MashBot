@@ -1,11 +1,23 @@
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+
+import java.io.FileReader;
 
 public class Mash {
 
     public static void main(String[] args) throws Exception {
 
-        JDA jda = JDABuilder.createDefault("NzM0NjY4ODg3MDYwMzgxNjk2.XxVD6Q.46fFEvu-9i_YoqcWm4wRsmBj28k").build();
+        JSONParser jsonParser = new JSONParser();
+
+        JSONObject jsonObject = (JSONObject) jsonParser.parse(new FileReader("C:\\Users\\Mash\\Documents\\mashfig.json"));
+
+        String token = (String) jsonObject.get("token");
+
+        System.out.println(token);
+
+        JDA jda = JDABuilder.createDefault(token).build();
 
     }
 
