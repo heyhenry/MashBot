@@ -1,4 +1,5 @@
 import events.HelloEvent;
+import events.MyListener;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import org.json.simple.JSONObject;
@@ -16,11 +17,10 @@ public class Mash {
 
         String token = (String) jsonObject.get("token");
 
-        System.out.println(token);
-
         JDA jda = JDABuilder.createDefault(token).build();
 
         jda.addEventListener(new HelloEvent());
+        jda.addEventListener(new MyListener());
 
     }
 

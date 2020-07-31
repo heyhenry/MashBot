@@ -10,7 +10,7 @@ public class HelloEvent extends ListenerAdapter {
         String messageSent = event.getMessage().getContentRaw();
         String name = event.getMember().getUser().getName();
 
-        if (messageSent.equalsIgnoreCase("Hello")) {
+        if (messageSent.equalsIgnoreCase("!Hello")) {
 
             if (!event.getMember().getUser().isBot()) {
 
