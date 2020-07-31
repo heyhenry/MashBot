@@ -1,4 +1,5 @@
 import events.HelloEvent;
+import events.Music;
 import events.MyListener;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
@@ -21,6 +22,7 @@ public class Mash {
 
         jda.addEventListener(new HelloEvent());
         jda.addEventListener(new MyListener());
+        jda.addEventListener(new Music());
 
     }
 
